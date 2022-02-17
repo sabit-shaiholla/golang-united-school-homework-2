@@ -12,17 +12,18 @@ import "math"
 
 type Num int
 
+const SidesCircle = 0
+const SidesTriangle = 3
+const SidesSquare = 4
+
 func CalcSquare(sideLen float64, sidesNum Num) float64 {
-	const SidesCircle = 0
-	const SidesTriangle = 3
-	const SidesSquare = 4
-	Pi := math.Pi
+
 	var area float64
 
 	if sidesNum == SidesCircle {
-		area = Pi * math.Pow(sideLen, 2)
+		area = math.Pi * math.Pow(sideLen, 2.0)
 	} else if sidesNum == SidesTriangle {
-		area = math.Sqrt(3) * math.Pow(sideLen, 2) / 4
+		area = math.Sqrt(3) * math.Pow(sideLen, 2.0) / 4
 	} else if sidesNum == SidesSquare {
 		area = math.Pow(sideLen, 2)
 	} else {
